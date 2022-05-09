@@ -22,4 +22,20 @@ public class AnimesService {
         return animes;
     }
     
+    public String updateAnime(Integer id , Anime anime){
+
+        for (int i = 0; i < animes.size(); i++) {
+
+            if(animes.get(i).getId() == id){
+
+                animes.set(i, anime);
+
+            }
+            
+        }
+
+        return "Anime updated successfully";
+
+    }
+    
 }

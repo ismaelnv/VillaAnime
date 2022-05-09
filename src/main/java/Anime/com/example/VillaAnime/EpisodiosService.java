@@ -23,6 +23,24 @@ public class EpisodiosService {
 
     }
 
+    public String updateEpisodes(Integer id,Episodio episodio){
+
+        for (int i = 0; i < episodes.size(); i++) {
+
+            if(episodes.get(i).getId() == id){
+
+                episodes.set(i, episodio);
+
+            }
+            
+        }
+
+        return "Episode updated successfully";
+
+    }
+
+
+
 
 
 

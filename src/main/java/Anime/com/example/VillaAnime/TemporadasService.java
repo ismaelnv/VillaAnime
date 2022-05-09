@@ -21,5 +21,21 @@ public class TemporadasService {
         
         return seasons;
     }
+
+    public String updateSeason(Integer id,Temporada temporada){
+
+        for (int i = 0; i < seasons.size(); i++) {
+
+            if( seasons.get(i).getId() == id ){
+
+                seasons.set(i, temporada);
+
+            }
+            
+        }
+
+        return "Season updated successfully";
+
+    }
     
 }

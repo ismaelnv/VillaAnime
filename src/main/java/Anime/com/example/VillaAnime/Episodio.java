@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Episodio {
 
     @JsonProperty("id")
-    private Integer id;//id
+    private Integer id;//id 
 
     @JsonProperty("capitulo")
     private String chapter;//Capitulo
