@@ -6,18 +6,24 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EpisodioService {
+public class EpisodiosService {
 
-    private List<Episodio> episodios = new ArrayList<>();
+    private List<Episodio> episodes = new ArrayList<>();
 
     public String addEpisodes(Episodio episodio){
 
-        episodios.add(episodio);
+        episodes.add(episodio);
         return "episode added successfully";
 
     }
 
-    
+    public List<Episodio> getEpisodes(){
+
+        return episodes;
+
+    }
+
+
 
 
 

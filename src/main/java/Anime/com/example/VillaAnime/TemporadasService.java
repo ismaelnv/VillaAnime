@@ -6,15 +6,20 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TemporadaService {
+public class TemporadasService {
 
-    private List<Temporada> temporadas = new ArrayList<>();
+    private List<Temporada> seasons = new ArrayList<>();
 
     public String addSeason(Temporada temporada){
 
-        temporadas.add(temporada);
+        seasons.add(temporada);
         return "season added successfully";
     
+    }
+
+    public List<Temporada> getSeasons(){
+        
+        return seasons;
     }
     
 }
