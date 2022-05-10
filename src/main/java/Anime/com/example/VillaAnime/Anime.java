@@ -3,57 +3,53 @@ package Anime.com.example.VillaAnime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Anime {
-    
+
     @JsonProperty("id")
-    private Integer id;//id
-    
+    private Integer id;// id
+
     @JsonProperty("name")
-    private String name;//Nombre
+    private String name;// Nombre
 
     @JsonProperty("favorites")
-    private String favorites;//Favoritos;
-    
-    public Anime (Integer id,String name,String favorites){
+    private String favorites;// Favoritos;
 
-        this.id =  id;
+    public Anime(Integer id, String name, String favorites) {
+
+        this.id = id;
         this.name = name;
-        this.favorites  = favorites;
+        this.favorites = favorites;
 
     }
 
-    public Integer getId(){
+    public Integer getId() {
 
         return id;
     }
 
-    public String getName(){
+    public String getName() {
 
         return name;
     }
 
-    public String getFavorites(){
-        
+    public String getFavorites() {
+
         return favorites;
     }
 
-    public void setId(Integer id){
+    public void setId(Integer id) {
 
         this.id = id;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
 
-        this.name =  name;
+        this.name = name;
 
     }
 
-    public void setFavorites(String favorites){
+    public void setFavorites(String favorites) {
 
-        this.favorites =  favorites;
+        this.favorites = favorites;
     }
 
-
-    
 }
-
-

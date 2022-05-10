@@ -10,32 +10,42 @@ public class AnimesService {
 
     private List<Anime> animes = new ArrayList<>();
 
-    public String addAnimes(Anime anime){
+    public String addAnimes(Anime anime) {
 
         animes.add(anime);
         return "successfully added";
 
     }
 
-    public List<Anime> getAnimes(){
+    public List<Anime> getAnimes() {
 
         return animes;
     }
-    
-    public String updateAnime(Integer id , Anime anime){
+
+    public Anime getAnime(Integer id) {
+
+        for (Anime anime : animes) {
+            if (anime.getId() == id) {
+                return anime;
+            }
+        }
+        return null;
+    }
+
+    public String updateAnime(Integer id, Anime anime) {
 
         for (int i = 0; i < animes.size(); i++) {
 
-            if(animes.get(i).getId() == id){
+            if (animes.get(i).getId() == id) {
 
                 animes.set(i, anime);
 
             }
-            
+
         }
 
         return "Anime updated successfully";
 
     }
-    
+
 }

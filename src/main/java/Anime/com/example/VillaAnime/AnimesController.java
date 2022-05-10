@@ -12,39 +12,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/www/villaAnime")
+@RequestMapping("/")
 public class AnimesController {
-    
+
     @Autowired
     private AnimesService animes;
 
-    @PostMapping("/agregar/anime")
-    public String addAnime(@RequestBody Anime anime){
+    @Autowired
+    private TemporadasService seasonService;
 
+    @PostMapping("/animes")
+    public String addAnime(@RequestBody Anime anime) {
         return animes.addAnimes(anime);
-
     }
 
     @GetMapping("/animes")
-    public List<Anime> getAnimes(){
-
+    public List<Anime> getAnimes() {
         return animes.getAnimes();
     }
 
-    @PutMapping("/actualizar/anime/{id}")
-    public String updateAnime(@PathVariable("id") Integer id, @RequestBody Anime anime){
-
-        return animes.updateAnime(id, anime);
-
+    @GetMapping("/animes/{id}/temporadas")
+    public String getAnimesSeason(@PathVariable("id") Integer id) {
+        Anime anime = animes.getAnime(id);
+        List<Temporada> seasons = seasonService.getSeasonsByAnime(id);
+        String result = "el anime es :" + anime.getName() + "\n";
+        result += "total temporadas: " + seasons.size() + " \n";
+        for (Temporada season : seasons) {
+            result += "Temporada: " + season.getName() + "\n";
+        }
+        return result;
     }
 
+    @PutMapping("/animes/{id}")
+    public String updateAnime(@PathVariable("id") Integer id, @RequestBody Anime anime) {
+        return animes.updateAnime(id, anime);
+    }
 
-
-    
-
-    
-
-
-
-    
 }
