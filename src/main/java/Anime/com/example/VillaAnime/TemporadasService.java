@@ -47,4 +47,15 @@ public class TemporadasService {
         return "Season updated successfully";
     }
 
+    public String deleteSeason(Integer id){
+        for(int i = 0; i < seasons.size(); i++){
+            if(seasons.get(i).getId() == id){
+                seasons.remove(i);
+            }
+        }
+        return "the season was deleted correctly";
+    }
+
+
+
 }

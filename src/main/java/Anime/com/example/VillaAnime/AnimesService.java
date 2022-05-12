@@ -37,4 +37,13 @@ public class AnimesService {
         return "Anime updated successfully";
     }
 
+    public  String deleteAnime(Integer id){
+        for (int i = 0; i < animes.size(); i++) {
+            if (animes.get(i).getId() == id) {
+                animes.remove(i);
+            }   
+        } 
+        return "the anime was deleted correctly";
+    }
+
 }

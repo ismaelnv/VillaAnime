@@ -47,6 +47,15 @@ public class EpisodiosService {
         return "Episode updated successfully";
     }
 
+    public String deleteEpisodes(Integer id){
+        for (int i = 0; i < episodes.size(); i++) {
+            if(episodes.get(i).getId() == id){
+                episodes.remove(i);
+            }  
+        }
+        return "the episode was deleted correctly";
+    }
+
 
 
 

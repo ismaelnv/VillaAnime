@@ -38,6 +38,17 @@ public class VideosService {
         return "The video was updated correctly";
     }
 
+    public String deleteVideos(Integer id){
+        for (int i = 0; i < videos.size(); i++) {
+            if(videos.get(i).getId() == id){
+                videos.remove(i);
+            }
+        }
+        return "the video was deleted successfully";
+    }
+
+
+
 
     
 
