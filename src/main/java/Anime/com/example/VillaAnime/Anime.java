@@ -14,41 +14,32 @@ public class Anime {
     private String favorites;// Favoritos;
 
     public Anime(Integer id, String name, String favorites) {
-
         this.id = id;
         this.name = name;
         this.favorites = favorites;
-
     }
 
     public Integer getId() {
-
         return id;
     }
 
     public String getName() {
-
         return name;
     }
 
     public String getFavorites() {
-
         return favorites;
     }
 
     public void setId(Integer id) {
-
         this.id = id;
     }
 
     public void setName(String name) {
-
         this.name = name;
-
     }
 
     public void setFavorites(String favorites) {
-
         this.favorites = favorites;
     }
 

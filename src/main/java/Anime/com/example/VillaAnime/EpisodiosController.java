@@ -8,32 +8,45 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/")
 public class EpisodiosController {
     
     @Autowired
-    private EpisodiosService episodes;
+    private EpisodiosService episodesService;
 
-    @PostMapping("/agregar/episodio")
+    @Autowired
+    private VideosService videosService;
+
+    @PostMapping("/episodios")
     public String addEpisode(@RequestBody Episodio episodio){
-
-       return episodes.addEpisodes(episodio);
-
+      return episodesService.addEpisodes(episodio);
     }
 
     @GetMapping("/episodios")
     public List <Episodio> getEpisodes(){
-
-        return episodes.getEpisodes();
+      return episodesService.getEpisodes();
     }
 
-    @PutMapping("/actualizar/episodio/{id}")
+    @GetMapping("/episodios/{id}/videos")
+    public String getVideoByEpisode(@PathVariable("id") Integer id){
+      Episodio episodio = episodesService.getEpisode(id);
+      List<Video> videos = videosService.getVideoByEpisode(id);
+      String result = "el episodio es :" + episodio.getName() + "\n";
+      result += "total de videos :" + videos.size() + "\n";
+      for (Video vide : videos) {
+        result += "Video :" + vide.getIdiom() + "\n";
+      }
+      return result;
+
+    }
+
+    @PutMapping("/episodio/{id}")
     public String updateEpisodes(@PathVariable("id") Integer id,@RequestBody Episodio episodio){
-
-        return episodes.updateEpisodes(id, episodio);
-
+      return episodesService.updateEpisodes(id, episodio);
     }
 
 

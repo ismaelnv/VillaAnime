@@ -16,24 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnimesController {
 
     @Autowired
-    private AnimesService animes;
+    private AnimesService animesService;
 
     @Autowired
     private TemporadasService seasonService;
 
     @PostMapping("/animes")
     public String addAnime(@RequestBody Anime anime) {
-        return animes.addAnimes(anime);
+        return animesService.addAnimes(anime);
     }
 
     @GetMapping("/animes")
-    public List<Anime> getAnimes() {
-        return animes.getAnimes();
+    public List<Anime> getAnimes(){
+        return animesService.getAnimes();
     }
 
     @GetMapping("/animes/{id}/temporadas")
     public String getAnimesSeason(@PathVariable("id") Integer id) {
-        Anime anime = animes.getAnime(id);
+        Anime anime = animesService.getAnime(id);
         List<Temporada> seasons = seasonService.getSeasonsByAnime(id);
         String result = "el anime es :" + anime.getName() + "\n";
         result += "total temporadas: " + seasons.size() + " \n";
@@ -45,7 +45,7 @@ public class AnimesController {
 
     @PutMapping("/animes/{id}")
     public String updateAnime(@PathVariable("id") Integer id, @RequestBody Anime anime) {
-        return animes.updateAnime(id, anime);
+        return animesService.updateAnime(id, anime);
     }
 
 }

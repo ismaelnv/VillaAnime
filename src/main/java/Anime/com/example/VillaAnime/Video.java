@@ -2,7 +2,7 @@ package Anime.com.example.VillaAnime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class video {
+public class Video {
 
     @JsonProperty("id")
     private Integer id;//id
@@ -12,74 +12,46 @@ public class video {
     
     @JsonProperty("quality")
     private String quality;//Calidad
-    
-    @JsonProperty("seen")
-    private String seen;//Visto
-    
-    @JsonProperty("views")
-    private Integer views;//Vistas
 
-    public video(Integer id,String idiom,String quality,String seen,Integer views){
+    @JsonProperty("id_episode")
+    private Integer idEpisode;//id_episodio
 
+    public Video(Integer id,String idiom,String quality,Integer idEpisode){
         this.id = id;
         this.idiom = idiom;
         this.quality = quality;
-        this.seen =  seen;
-        this.views = views;
+        this.idEpisode = idEpisode;
     }
 
     public Integer getId(){
-
-        return id;
+        return this.id;
     }
     
     public String getIdiom(){
-
-        return idiom;
+        return this.idiom;
     }
 
     public String getQuality(){
-
-        return quality;
-    }
-    
-    public String getSeen(){
-
-        return seen;
+        return this.quality;
     }
 
-    public Integer getViews(){
-
-        return views;
+    public Integer getIdEpisode(){
+        return this.idEpisode;
     }
 
     public void setId(Integer id){
-
         this.id = id;
-
     }
 
     public void setIdiom(String idiom){
-
         this.idiom = idiom;
-
     }
 
     public void setQuality(String quality){
-
         this.quality =  quality;
     }
 
-    public void setSeen(String seen){
-
-        this.seen =  seen;
-
+    public void setIdEpisode(Integer idEpisode){
+        this.idEpisode = idEpisode;
     }
-
-    public void setViews(Integer views){
-
-        this.views = views;
-
-    }
-
 }

@@ -11,32 +11,40 @@ public class EpisodiosService {
     private List<Episodio> episodes = new ArrayList<>();
 
     public String addEpisodes(Episodio episodio){
-
         episodes.add(episodio);
         return "episode added successfully";
-
     }
 
     public List<Episodio> getEpisodes(){
-
         return episodes;
+    }
 
+    public List<Episodio> getEpisodesBySeasons(Integer idSeason){
+        List<Episodio> episo = new ArrayList<>();
+        for (Episodio episodio :episodes) {
+            if (episodio.getIdSeason() == idSeason) {
+                episo.add(episodio); 
+            }
+        }
+        return episo;
+    }
+
+    public Episodio getEpisode(Integer id){
+        for (Episodio episodio : episodes) {
+            if(episodio.getId() == id){
+                return episodio;
+            }
+        }
+        return null;
     }
 
     public String updateEpisodes(Integer id,Episodio episodio){
-
         for (int i = 0; i < episodes.size(); i++) {
-
             if(episodes.get(i).getId() == id){
-
                 episodes.set(i, episodio);
-
-            }
-            
+            } 
         }
-
         return "Episode updated successfully";
-
     }
 
 

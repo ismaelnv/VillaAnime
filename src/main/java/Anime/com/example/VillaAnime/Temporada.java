@@ -20,24 +20,29 @@ public class Temporada {
     }
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public Integer getIdAnime() {
+        return this.idAnime;
     }
 
     public void setId(Integer id) {
         this.id = id;
-
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Integer getIdAnime() {
-        return this.idAnime;
+    public void  setIdAnime(Integer idAnime){
+        this.idAnime = idAnime;
     }
+
+  
 
 }
