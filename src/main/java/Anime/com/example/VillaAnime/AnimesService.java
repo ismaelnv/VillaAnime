@@ -55,6 +55,18 @@ public class AnimesService {
         return "The anime was successfully added to favorites";
     }
 
+    public List<Anime> getFavoriteAnimes(){
+        List<Anime> animeFa = new ArrayList<>();
+        for (Anime anime : animes) {
+            if (anime.getFavorites() == "favorito" ) {
+                animeFa.add(anime);
+            }
+        }
+        return animeFa;
+    }
+
+
+
 
 
 }

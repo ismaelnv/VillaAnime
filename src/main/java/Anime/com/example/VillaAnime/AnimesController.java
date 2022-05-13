@@ -59,4 +59,9 @@ public class AnimesController {
         return animesService.addToFavorites(id);
     }
 
+    @GetMapping("/animes/favoritos")
+    public List<Anime> getFavoriteAnimes(){
+        return animesService.getFavoriteAnimes();
+    }
+
 }
