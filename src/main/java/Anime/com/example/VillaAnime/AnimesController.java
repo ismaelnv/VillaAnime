@@ -54,4 +54,9 @@ public class AnimesController {
         return animesService.deleteAnime(id);
     }
 
+    @PutMapping("/animes/{id}/favoritos")
+    public String addToFavorites(@PathVariable("id") Integer id){
+        return animesService.addToFavorites(id);
+    }
+
 }

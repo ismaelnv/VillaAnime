@@ -46,4 +46,15 @@ public class AnimesService {
         return "the anime was deleted correctly";
     }
 
+    public String addToFavorites(Integer id){
+        for (Anime anime : animes) {
+            if(anime.getId() == id){
+                anime.setFavorites("favorito");
+            }
+        }
+        return "The anime was successfully added to favorites";
+    }
+
+
+
 }
