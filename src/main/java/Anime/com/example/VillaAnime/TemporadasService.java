@@ -56,6 +56,15 @@ public class TemporadasService {
         return "the season was deleted correctly";
     }
 
+    public Temporada getSeasonById(Integer id){
+        for (Temporada temporada : seasons) {
+            if(temporada.getId() == id){
+                return temporada;
+            } 
+        }
+        return null;
+    }
+
 
 
 }

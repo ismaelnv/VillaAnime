@@ -53,6 +53,11 @@ public class EpisodiosController {
   public String deleteEpisodes(@PathVariable("id") Integer id){
     return episodesService.deleteEpisodes(id);
   }
+  
+  @GetMapping("/episodios/{id}")
+  public Episodio getEpisodeById(@PathVariable("id") Integer id){
+    return episodesService.getEpisodeById(id);
+  }
 
 
 

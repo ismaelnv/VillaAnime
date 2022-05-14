@@ -47,6 +47,15 @@ public class VideosService {
         return "the video was deleted successfully";
     }
 
+    public Video getVideoById(Integer id){
+        for (Video video : videos) {
+            if(video.getId() == id){
+                return video;
+            }
+        }
+        return null;
+    }
+
 
 
 

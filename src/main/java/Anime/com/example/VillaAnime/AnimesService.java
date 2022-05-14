@@ -65,6 +65,15 @@ public class AnimesService {
         return animeFa;
     }
 
+    public Anime getAnimeById(Integer id){
+        for (Anime anime : animes) {
+            if(anime.getId() == id){
+               return anime;
+            }
+        }
+        return null;
+    }
+
 
 
 

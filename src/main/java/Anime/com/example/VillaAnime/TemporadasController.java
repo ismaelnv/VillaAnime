@@ -50,9 +50,14 @@ public class TemporadasController {
         return seasonsService.updateSeason(id, temporada);
     }
 
-    @DeleteMapping("temporadas/{id}")
+    @DeleteMapping("/temporadas/{id}")
     public String deleteSeason(@PathVariable("id") Integer id){
         return seasonsService.deleteSeason(id);
+    }
+
+    @GetMapping("/temporads/{id}")
+    public Temporada getSeasonById(@PathVariable("id") Integer id){
+        return seasonsService.getSeasonById(id);
     }
 
 

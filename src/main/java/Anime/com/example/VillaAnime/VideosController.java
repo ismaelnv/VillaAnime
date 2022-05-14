@@ -39,6 +39,9 @@ public class VideosController {
         return videosService.deleteVideos(id);
     }
 
-    
+    @GetMapping("/videos/{id}")
+    public Video getVideoById(@PathVariable("id") Integer id){
+        return videosService.getVideoById(id);
+    }
     
 }

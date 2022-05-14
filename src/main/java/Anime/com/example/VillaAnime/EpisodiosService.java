@@ -56,6 +56,17 @@ public class EpisodiosService {
         return "the episode was deleted correctly";
     }
 
+    public Episodio getEpisodeById(Integer id){
+        for (Episodio episodio: episodes) {
+            if(episodio.getId() == id){
+                return episodio;
+            }
+        }
+        return null;
+    }
+
+
+
 
 
 

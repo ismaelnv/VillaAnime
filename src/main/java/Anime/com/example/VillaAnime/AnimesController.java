@@ -64,4 +64,9 @@ public class AnimesController {
         return animesService.getFavoriteAnimes();
     }
 
+    @GetMapping("/animes/{id}")
+    public Anime getAnimeById(@PathVariable("id") Integer id){
+        return animesService.getAnimeById(id);
+    }
+
 }
