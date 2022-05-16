@@ -60,11 +60,14 @@ public class EpisodiosController {
   }
 
   @PutMapping("/episodios/{id}/vistos")
-  public String addToWatchedVideos(@PathVariable("id") Integer id){
-    return  episodesService.addToWatchedVideos(id);
+  public String addToWatchedEpisodes(@PathVariable("id") Integer id){
+    return  episodesService.addToWatchedEpisodes(id);
   }
 
-
+  @GetMapping("/episodios/vistos")
+  public List<Episodio> getEpisodesViewed(){
+    return episodesService.getEpisodesViewed();
+  }
 
     
 }

@@ -65,13 +65,23 @@ public class EpisodiosService {
         return null;
     }
 
-    public String addToWatchedVideos(Integer id){
+    public String addToWatchedEpisodes(Integer id){
         for(Episodio episodio : episodes) {
             if(episodio.getId() == id){
                 episodio.setSeen("visto");
             }
         }
         return "Added to the list of videos seen";
+    }
+
+    public List<Episodio> getEpisodesViewed(){
+        List<Episodio> episodesWatched = new ArrayList<>();
+        for (Episodio episodio : episodes) {
+            if(episodio.getSeen() == "visto"){
+                episodesWatched.add(episodio);
+            }
+        }
+        return episodesWatched;
     }
 
 
