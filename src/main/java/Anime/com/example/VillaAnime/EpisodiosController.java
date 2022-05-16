@@ -44,7 +44,7 @@ public class EpisodiosController {
     return result;
   }
 
-  @PutMapping("/episodio/{id}")
+  @PutMapping("/episodios/{id}")
   public String updateEpisodes(@PathVariable("id") Integer id,@RequestBody Episodio episodio){
     return episodesService.updateEpisodes(id, episodio);
   }
@@ -57,6 +57,11 @@ public class EpisodiosController {
   @GetMapping("/episodios/{id}")
   public Episodio getEpisodeById(@PathVariable("id") Integer id){
     return episodesService.getEpisodeById(id);
+  }
+
+  @PutMapping("/episodios/{id}/vistos")
+  public String addToWatchedVideos(@PathVariable("id") Integer id){
+    return  episodesService.addToWatchedVideos(id);
   }
 
 

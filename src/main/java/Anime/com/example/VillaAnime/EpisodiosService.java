@@ -65,6 +65,17 @@ public class EpisodiosService {
         return null;
     }
 
+    public String addToWatchedVideos(Integer id){
+        for(Episodio episodio : episodes) {
+            if(episodio.getId() == id){
+                episodio.setSeen("visto");
+            }
+        }
+        return "Added to the list of videos seen";
+    }
+
+
+
 
 
 
