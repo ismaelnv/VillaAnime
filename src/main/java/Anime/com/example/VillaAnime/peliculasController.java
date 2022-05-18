@@ -49,5 +49,10 @@ public class peliculasController {
         return peliculasService.addMovieToWatched(id);
     }
 
+    @GetMapping("/peliculas/vistos")
+    public List<Pelicula> getMoviesViewed(){
+        return peliculasService.getMoviesViewed();
+    }
+
     
 }

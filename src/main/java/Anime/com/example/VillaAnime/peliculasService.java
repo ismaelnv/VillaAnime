@@ -55,6 +55,18 @@ public class peliculasService {
         return "Was added correctly to watched movies";
     }
 
+    public List<Pelicula> getMoviesViewed(){
+        List<Pelicula> moviesSeen = new ArrayList<>();
+        for (Pelicula pelicula : films) {
+            if(pelicula.getSeen() == "visto"){
+                moviesSeen.add(pelicula);
+            }
+        }
+        return moviesSeen;
+    }
+
+
+
     
     
 }
