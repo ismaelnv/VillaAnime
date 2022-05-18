@@ -19,6 +19,15 @@ public class peliculasService {
         return films;
     }
 
+    public String toUpdateFilms(Integer id,Pelicula pelicula){
+        for (int i = 0; i < films.size(); i++) {
+            if(films.get(i).getId() == id){
+                films.set(i, pelicula);
+            }
+        }
+        return "The movie was updated correctly";
+    }
+
     
     
 }
