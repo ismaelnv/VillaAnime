@@ -3,6 +3,7 @@ package Anime.com.example.VillaAnime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,11 @@ public class peliculasController {
     @PutMapping("/peliculas/{id}")
     public String toUpdateFilms(@PathVariable("id") Integer id,@RequestBody Pelicula pelicula){
         return peliculasService.toUpdateFilms(id, pelicula);
+    }
+
+    @DeleteMapping("/peliculas/{id}")
+    public String deleteFilms(@PathVariable("id") Integer id){
+        return peliculasService.deleteFilms(id);
     }
 
     

@@ -28,6 +28,15 @@ public class peliculasService {
         return "The movie was updated correctly";
     }
 
+    public String deleteFilms(Integer id){
+        for (int i = 0; i < films.size(); i++) {
+            if(films.get(i).getId() == id){
+                films.remove(i);
+            }
+        }
+        return "Successfully removed the movie";
+    }
+
     
     
 }
