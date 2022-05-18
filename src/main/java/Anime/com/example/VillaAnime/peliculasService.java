@@ -15,6 +15,10 @@ public class peliculasService {
         return "The movie was added successfully";
     }
 
+    public List<Pelicula> getFilms(){
+        return films;
+    }
+
     
     
 }
