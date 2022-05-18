@@ -46,7 +46,14 @@ public class peliculasService {
         return null;
     }
 
-
+    public String addMovieToWatched (Integer id){
+        for (Pelicula pelicula : films) {
+            if(pelicula.getId() == id){
+                pelicula.setSeen("visto");
+            }  
+        }
+        return "Was added correctly to watched movies";
+    }
 
     
     

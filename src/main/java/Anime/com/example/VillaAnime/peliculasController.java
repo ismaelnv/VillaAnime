@@ -44,5 +44,10 @@ public class peliculasController {
         return peliculasService.getFilmsById(id);
     }
 
+    @PutMapping("/peliculas/{id}/vistos")
+    public String addMovieToWatched(@PathVariable("id") Integer id){
+        return peliculasService.addMovieToWatched(id);
+    }
+
     
 }
