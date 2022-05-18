@@ -37,6 +37,17 @@ public class peliculasService {
         return "Successfully removed the movie";
     }
 
+    public Pelicula getFilmsById(Integer id){
+        for (Pelicula pelicula : films) {
+            if(pelicula.getId() == id){
+                return pelicula;
+            }
+        }
+        return null;
+    }
+
+
+
     
     
 }

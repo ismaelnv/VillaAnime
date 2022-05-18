@@ -39,5 +39,10 @@ public class peliculasController {
         return peliculasService.deleteFilms(id);
     }
 
+    @GetMapping("/peliculas/{id}")
+    public Pelicula getFilmsById(@PathVariable("id") Integer id){
+        return peliculasService.getFilmsById(id);
+    }
+
     
 }
