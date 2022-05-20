@@ -54,5 +54,10 @@ public class peliculasController {
         return peliculasService.getMoviesViewed();
     }
 
+    @PutMapping("/peliculas/{id}/vistas")
+    public String addViewToMovie(@PathVariable("id") Integer id){
+        return peliculasService.addViewToMovie(id);
+    }
+
     
 }

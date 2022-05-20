@@ -65,6 +65,19 @@ public class peliculasService {
         return moviesSeen;
     }
 
+    public String addViewToMovie(Integer id){
+        for (Pelicula pelicula : films) {
+            if(pelicula.getId() == id){
+                pelicula.setViews(pelicula.getViews()+1);
+            }
+        }
+        return "Added a view";
+    }
+
+
+
+
+
 
 
     
